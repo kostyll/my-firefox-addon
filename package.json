@@ -1,0 +1,9 @@
+{
+  "name": "my-firefox-addon",
+  "title": "my-firefox-addon",
+  "id": "jid1-esBcvPn2EBaIxw",
+  "description": "a basic add-on",
+  "author": "",
+  "license": "MPL 2.0",
+  "version": "0.1"
+}
