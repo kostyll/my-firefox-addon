@@ -82,6 +82,10 @@ var db_callback = function (r){
     //body...
 };
 
+test_func = function(){
+    console.log("test_func entered...");
+};
+
 // https://github.com/aaronpowell/db.js
 // or
 // http://habrahabr.ru/post/198666/
