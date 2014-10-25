@@ -31,7 +31,7 @@ def gen_popup_window():
                         LABEL(_("New job:"),for_="new_job",class_="form-control")
                         INPUT(id_="new_job",type="text",class_="form-control")
             A(_("Ok"),id_="submit_text_selection",class_="btn btn-primary")
-        JS(src='popup_general.js')
+        JS(src='popup_selection.js')
     return out
 
 print gen_popup_window()
