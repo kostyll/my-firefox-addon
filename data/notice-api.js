@@ -96,7 +96,7 @@ NotesManagement = function(request_manager_instance,ui_manager_instance){
     // - request(url,method,data) -> string
     this.request_manager = request_manager_instance;
 
-    this.table_prefix = string(this);
+    this.table_prefix = String(this);
     this.table_tags = this.table_prefix + 'tags';
     this.table_jobs = this.table_prefix + 'jobs';
     this.table_notes = this.table_prefix + 'notes';
@@ -116,7 +116,7 @@ NotesManagement.prototype.init_db = function(){
         server: this.storage_name,
         version: 1,
         schema: {
-            this.table_tags:{
+            table_tags:{
                 key:{
                     keyPath: 'id',
                     autoIncrement: true,
@@ -125,7 +125,7 @@ NotesManagement.prototype.init_db = function(){
                     name: { unique: true },
                 },
             },
-            this.table_jobs:{
+            table_jobs:{
                 key:{
                     keyPath: 'id',
                     autoIncrement: true,
@@ -136,7 +136,7 @@ NotesManagement.prototype.init_db = function(){
                     stop : { },
                 },
             },
-            this.table_notes:{
+            table_notes:{
                 key:{
                     keyPath: 'id',
                     autoIncrement: true,
