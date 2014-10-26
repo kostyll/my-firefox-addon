@@ -101,7 +101,7 @@ get_db_manager = ->
 db_callback = (r) ->
   #body...
 
-test_func = ->
+document.test_func = ->
   console.log "test_func entered..."
   return
 
@@ -239,3 +239,8 @@ NotesManagement::render_report_by_tag = (tag_name) ->
 
 NotesManagement::render_report_by_job = (job_nane) ->
 # body...
+
+# save to document NotesManagement
+document.get_notes_management = ->
+  console.log "Getting NotesManagement..."
+  return NotesManagement
