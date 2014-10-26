@@ -22,6 +22,6 @@ generate_popups_html:
 	@for generate_script in $(GEN_POPUPS) ; do \
 		# echo $(addsuffix .py, $$generate_script) ; \
 		# echo $(addsuffix .html,$$generate_script) ; \
-		$(PYTHON) $(addsuffix .py, $$generate_script) > $(addsuffix .html,$$generate_script) ; \
+ 		$(PYTHON) $(addsuffix .py, $$generate_script) > $(addsuffix .html,$$generate_script) ; \
 	done
 	@echo "[*]Done"

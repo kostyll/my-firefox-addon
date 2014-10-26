@@ -99,9 +99,8 @@ get_db_manager = ->
   exDB()
 
 db_callback = (r) ->
+  #body...
 
-
-#body...
 test_func = ->
   console.log "test_func entered..."
   return
@@ -127,9 +126,8 @@ NotesManagement = (request_manager_instance, ui_manager_instance) ->
   return
 
 NotesManagement::notice_error = (error_message) ->
-
-
 # body...
+
 NotesManagement::init_db = ->
   @db_manager.open
     server: @storage_name
@@ -172,6 +170,7 @@ NotesManagement::init_db = ->
 
 
 #Tags operations ...
+
 NotesManagement::add_tag = (tag_name) ->
   @db_manager.table(@table_tags).add
     name: tag_name
@@ -198,55 +197,45 @@ NotesManagement::list_tags = ->
 
 #TODO: show every tag...
 NotesManagement::fuzzy_tags = (tag_name_part) ->
-
-
 # body...
 
 #Jobs operations
+
 NotesManagement::add_job = (job_nane) ->
-
-
 # body...
+
 NotesManagement::remove_job = (job_nane) ->
-
-
 # body...
+
 NotesManagement::get_jobs = (callback) ->
-
-
 # body...
+
 NotesManagement::list_jobs = ->
-
-
 # body...
+
 NotesManagement::fuzzy_tags = (job_name_part) ->
-
-
 # body...
+
 
 #Selected text management
+
 NotesManagement::save_selected_text = (selected_text) ->
-
-
 # body...
+
 NotesManagement::get_selections = (callback) ->
-
-
 # body...
+
 NotesManagement::list_selections = ->
-
-
 # body...
+
 NotesManagement::fuzzy_selections = (selection_name_part) ->
-
-
 # body...
+
 
 #Report composing
+
 NotesManagement::render_report_by_tag = (tag_name) ->
-
-
 # body...
-NotesManagement::render_report_by_job = (job_nane) ->
 
+NotesManagement::render_report_by_job = (job_nane) ->
 # body...
