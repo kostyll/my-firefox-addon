@@ -12,6 +12,12 @@ def gen_popup_window():
     with BODY:
         with DIV.container_fluid:
             with DIV.row_fluid:
+                with DIV.row_fluid:
+                    LABEL(_("URL"),for_="selected_text_url")
+                    INPUT(type="text",id_="selected_text_url",class_="form-control")
+                with DIV.row_fluid:
+                    LABEL(_("URL"),for_="selected_text_title")
+                    INPUT(type="text",id_="selected_text_title",class_="form-control")
                 with DIV.span12:
                     LABEL(_("Selected text"),for_="selected_text")
                     with TEXTAREA(id_="selected_text",class_="form-control",rows=5).input_large:

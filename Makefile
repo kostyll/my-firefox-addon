@@ -19,7 +19,7 @@ coffee_scripts:
 	@for script in $(COFFEE_SCRIPTS) ; do \
 		# echo $(addsuffix .coffee,$$script) ; \
 		# echo $(addsuffix .js,$$script); \
-		coffee -p -c $(addsuffix .coffee,$$script) > $(addsuffix .js,$$script); \
+		coffee -b -p -c $(addsuffix .coffee,$$script) > $(addsuffix .js,$$script); \
 	done
 	@echo "[*]Done"
 

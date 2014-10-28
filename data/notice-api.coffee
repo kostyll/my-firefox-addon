@@ -1,103 +1,3 @@
-get_db_manager = ->
-  exDB = ->
-    self = this
-    @extensionId = arguments[0] or "eojllnbjkomphhmpcpafaipblnembfem"
-    @filterList = new Array()
-    @_table
-    @_query
-    self.sendMessage = sendMessage = (data, callback) ->
-      chrome.runtime.sendMessage self.extensionId, data, callback
-      return
-
-    self.open = (params, callback) ->
-      self.sendMessage
-        cmd: "open"
-        params: params
-      , (r) ->
-        tn = undefined
-        i = 0
-
-        while i < r.length
-          tn = r[i]
-          i++
-        self.__defineGetter__ tn, ->
-          self._table = tn
-          this
-
-        callback()
-        return
-
-      self
-
-    self.close = (callback) ->
-      self.sendMessage
-        cmd: "close"
-        params: {}
-      , callback
-      self
-
-    self.table = (name) ->
-      self._table = name
-      self
-
-    self.query = ->
-      self._query = arguments
-      self
-
-    self.execute = (callback) ->
-      self.sendMessage
-        cmd: "execute"
-        table: self._table
-        query: self._query
-        filters: self.filterList
-      , (result) ->
-        if result and result.RUNTIME_ERROR
-          console.error result.RUNTIME_ERROR.message
-          result = null
-        callback result
-        return
-
-      self._query = null
-      self.filterList = []
-      return
-
-    self.getUsageAndQuota = (callback) ->
-      self.sendMessage
-        cmd: "getUsageAndQuota"
-      , callback
-      return
-
-    "add update remove get".split(" ").forEach (fn) ->
-      self[fn] = (item, callback) ->
-        self.sendMessage
-          cmd: fn
-          table: self._table
-          params: item
-        , (result) ->
-          if result and result.RUNTIME_ERROR
-            console.error result.RUNTIME_ERROR.message
-            result = null
-          callback result
-          return
-
-        self
-
-      return
-
-    "all only lowerBound upperBound bound filter desc distinct keys count".split(" ").forEach (fn) ->
-      self[fn] = ->
-        self.filterList.push
-          type: fn
-          args: arguments
-
-        self
-
-      return
-
-    return
-  "use strict"
-  exDB()
-
 db_callback = (r) ->
   #body...
 
@@ -110,7 +10,7 @@ document.test_func = ->
 # or
 # http://habrahabr.ru/post/198666/
 NotesManagement = (request_manager_instance, ui_manager_instance) ->
-  
+
   # Init http requests engine
   # Request manager needs to implement request->responce model of web-app communications with the next methods:
   # - request(url,method,data) -> string
@@ -120,7 +20,7 @@ NotesManagement = (request_manager_instance, ui_manager_instance) ->
   @table_jobs = @table_prefix + "jobs"
   @table_notes = @table_prefix + "notes"
   @storage_name = "NotesDB"
-  @db_manager = get_db_manager()
+  @db_manager = db
   @init_db()
   @ui_manager = ui_manager_instance
   return

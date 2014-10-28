@@ -15,6 +15,7 @@ myListener = ->
   popup_selection.port.emit "text-update",
     text: selection.text
     url: tabs.activeTab.url
+    title: tabs.activeTab.title
 
   return
 
@@ -33,9 +34,10 @@ selection.on "select", myListener
 
 popup_selection = panel.Panel(
   width: 600
-  height: 300
+  height: 500
   contentURL: data.url("popup_selection.html")
   contentScriptFile: [
+    data.url("thirdparty/db.js/src/db.js")
     data.url("notice-api.js")
     data.url("popup_selection.js")
   ]
