@@ -102,10 +102,21 @@ ok_button.onclick = ->
     selected_tags,
     selected_jobs
   ]
+
+  test_jaml(iNewTitle)
   return
 
 self.port.on "show", onShow = ->
   console.log "Entered!"
+  return
+
+test_jaml = (text) ->
+  Jaml.register 'test',(text) ->
+    h1("test with jaml " +text)
+  html = Jaml.render "test",text
+  console.log "Rendered html by jaml"
+  console.log html
+  $("#test_div").empty().append(String(html))
   return
 
 self.port.on "text-update", (data) ->

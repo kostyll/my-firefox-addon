@@ -37,6 +37,10 @@ def gen_popup_window():
             with DIV.row_fluid:
                 LABEL(_("Selected jobs:"),for_="selected_jobs",class_="form-control")
                 INPUT(id_="selected_jobs",type="text",class_="form-control",data_role="tagsinput")
+            with DIV.row_fluid:
+                LABEL(_("Test area"))
+                with DIV(id_="test_div"):
+                    pass
             A(_("Ok"),id_="submit_text_selection",class_="btn btn-primary")
         JS(src='popup_selection.js')
     return out

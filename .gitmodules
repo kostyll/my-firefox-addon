@@ -7,3 +7,6 @@
 [submodule "data/thirdparty/md5lib"]
 	path = data/thirdparty/md5lib
 	url = git@github.com:blueimp/JavaScript-MD5.git
+[submodule "data/thirdparty/jaml"]
+	path = data/thirdparty/jaml
+	url = git@github.com:edspencer/jaml.git

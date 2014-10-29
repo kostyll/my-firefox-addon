@@ -37,12 +37,28 @@ popup_selection = panel.Panel(
   height: 600
   contentURL: data.url("popup_selection.html")
   contentScriptFile: [
+    # including md5 hashing library
     data.url("thirdparty/md5lib/js/md5.js")
+    # including jaml modules
+    data.url("thirdparty/jaml/src/Jaml.js")
+    data.url("thirdparty/jaml/src/Node.js")
+    data.url("thirdparty/jaml/src/Template.js")
+
+    # inclugin common jquery and bootstrap libraries
+
     data.url("thirdparty/jquery-git2.js")
     data.url("thirdparty/bootstrap.min.js")
+
+    # including buautiful tags library
     data.url("thirdparty/bs2-tagsinput/dist/bootstrap-tagsinput.js")
+
+    # including indexedDB OOP wrapper library
     data.url("thirdparty/db.js/src/db.js")
+
+    # including logic
     data.url("notice-api.js")
+
+    # including popup window logic
     data.url("popup_selection.js")
   ]
 )
