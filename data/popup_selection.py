@@ -6,7 +6,7 @@ _ = lambda x:x
 def gen_popup_window():
     with HTML5 as out:
         with HEAD:
-            CSS(href='bootstrap.min.css')
+            CSS(href='thirdparty/bootstrap.min.css')
             CSS(href='thirdparty/bs2-tagsinput/dist/bootstrap-tagsinput.css')
             # JS(src='jquery-git2.js')
             # JS(src='bootstrap.min.js')

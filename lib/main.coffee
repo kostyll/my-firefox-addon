@@ -38,6 +38,7 @@ popup_selection = panel.Panel(
   contentURL: data.url("popup_selection.html")
   contentScriptFile: [
     data.url("thirdparty/jquery-git2.js")
+    data.url("thirdparty/bootstrap.min.js")
     data.url("thirdparty/bs2-tagsinput/dist/bootstrap-tagsinput.js")
     data.url("thirdparty/db.js/src/db.js")
     data.url("notice-api.js")
