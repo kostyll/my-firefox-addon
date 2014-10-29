@@ -4,3 +4,6 @@
 [submodule "data/thirdparty/bs2-tagsinput"]
 	path = data/thirdparty/bs2-tagsinput
 	url = git@github.com:TimSchlechter/bootstrap-tagsinput.git
+[submodule "data/thirdparty/md5lib"]
+	path = data/thirdparty/md5lib
+	url = git@github.com:blueimp/JavaScript-MD5.git

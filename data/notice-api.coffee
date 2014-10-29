@@ -12,10 +12,6 @@ get_db_callback = (save_to) ->
   # console.log wrapper
   wrapper
 
-document.test_func = ->
-  console.log "test_func entered..."
-  return
-
 
 # https://github.com/aaronpowell/db.js
 # or
@@ -84,7 +80,9 @@ NotesManagement::init_db = ->
           autoIncrement: true
 
         indexes:
-          name: {}
+          hash:
+            unique: true
+          title: {}
           url: {}
           text: {}
           tags: {}
@@ -119,7 +117,7 @@ NotesManagement::list_tags = (callback) ->
 
 #TODO: show every tag...
 NotesManagement::fuzzy_tags = (tag_name_part) ->
-# body...
+  # body...
 
 #Jobs operations
 
@@ -131,42 +129,53 @@ NotesManagement::add_job = (job_nane) ->
   .then get_db_callback()
 
 NotesManagement::remove_job = (job_nane) ->
-# body...
+  # body...
 
 NotesManagement::get_jobs = (callback) ->
-# body...
+  # body...
 
 NotesManagement::list_jobs = (callback) ->
   console.log "calling list_jobs"
   jobs_query = @server.table_jobs.query("name").all().execute()
   jobs_query.then(callback,(x)-> console.log "Error")
 
+
 NotesManagement::fuzzy_tags = (job_name_part) ->
-# body...
+  # body...
 
 
 #Selected text management
 
-NotesManagement::save_selected_text = (selected_text) ->
-# body...
+NotesManagement::save_selection = (selection) ->
+  hash = md5(selection.text+selection.url)
+  @server.table_notes.add
+    hash: hash
+    title: selection.title
+    url: selection.url
+    text: selection.text
+    tags: selection.tags
+    jobs: selection.jobs
+  .then(get_db_callback(@))
+  return
+
 
 NotesManagement::get_selections = (callback) ->
-# body...
+  # body...
 
 NotesManagement::list_selections = ->
-# body...
+  # body...
 
 NotesManagement::fuzzy_selections = (selection_name_part) ->
-# body...
+  # body...
 
 
 #Report composing
 
 NotesManagement::render_report_by_tag = (tag_name) ->
-# body...
+  # body...
 
 NotesManagement::render_report_by_job = (job_nane) ->
-# body...
+  # body...
 
 # save to document NotesManagement
 document.get_notes_management = ->

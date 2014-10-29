@@ -40,6 +40,12 @@ clear_input = (input) ->
 
 process_selected_text = (text,title,url,tags,jobs) ->
   # process current items
+  notes_manager.save_selection
+    text: text
+    url: url
+    title: title
+    tags: tags
+    jobs: jobs
 
 show_tag_items = (tags_items,all_items_div,selected_items_div) ->
   # display tags
@@ -81,6 +87,7 @@ ok_button.onclick = ->
   notes_manager.list_tags(show_tags)
   notes_manager.list_jobs(show_jobs)
 
+  process_selected_text iNewText,iNewTitle,iNewUrl,tags,jobs
 
   console.log "Tags = "
   console.log tags

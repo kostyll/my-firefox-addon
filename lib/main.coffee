@@ -37,6 +37,7 @@ popup_selection = panel.Panel(
   height: 600
   contentURL: data.url("popup_selection.html")
   contentScriptFile: [
+    data.url("thirdparty/md5lib/js/md5.js")
     data.url("thirdparty/jquery-git2.js")
     data.url("thirdparty/bootstrap.min.js")
     data.url("thirdparty/bs2-tagsinput/dist/bootstrap-tagsinput.js")
