@@ -1,3 +1,6 @@
 [submodule "data/thirdparty/db.js"]
 	path = data/thirdparty/db.js
 	url = git@github.com:aaronpowell/db.js.git
+[submodule "data/thirdparty/bs2-tagsinput"]
+	path = data/thirdparty/bs2-tagsinput
+	url = git@github.com:TimSchlechter/bootstrap-tagsinput.git

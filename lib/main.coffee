@@ -33,10 +33,12 @@ buttons.ActionButton(
 selection.on "select", myListener
 
 popup_selection = panel.Panel(
-  width: 600
-  height: 500
+  width: 700
+  height: 600
   contentURL: data.url("popup_selection.html")
   contentScriptFile: [
+    data.url("thirdparty/jquery-git2.js")
+    data.url("thirdparty/bs2-tagsinput/dist/bootstrap-tagsinput.js")
     data.url("thirdparty/db.js/src/db.js")
     data.url("notice-api.js")
     data.url("popup_selection.js")
