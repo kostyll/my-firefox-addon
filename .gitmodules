@@ -10,3 +10,6 @@
 [submodule "data/thirdparty/jaml"]
 	path = data/thirdparty/jaml
 	url = git@github.com:edspencer/jaml.git
+[submodule "data/thirdparty/summary.js"]
+	path = data/thirdparty/summary.js
+	url = git@github.com:kostyll/summary.js.git

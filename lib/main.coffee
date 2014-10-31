@@ -55,6 +55,9 @@ popup_selection = panel.Panel(
     # including indexedDB OOP wrapper library
     data.url("thirdparty/db.js/src/db.js")
 
+    # including summary module
+    data.url("thirdparty/summary.js/dist/summary.js")
+
     # including logic
     data.url("notice-api.js")
 

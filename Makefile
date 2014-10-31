@@ -13,6 +13,7 @@ endef
 .PHONY: all
 all:
 	@$(MAKE) coffee_scripts generate_popups_html
+	$(MAKE) -C data/thirdparty/summary.js
 
 coffee_scripts:
 	@echo "[*]Compile coffee scripts"
@@ -47,3 +48,7 @@ enter:
 	$(chell cd,$$current_dir)
 run:
 	cfx run
+test:
+	@$(MAKE) coffee_scripts
+	@$(MAKE) generate_popups_html
+	@$(MAKE) run
